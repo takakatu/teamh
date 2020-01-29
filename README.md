@@ -117,6 +117,15 @@
 ### Association
 - belongs_to :item
 
+## brandsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+
+### Association
+- has_many :items
+
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
