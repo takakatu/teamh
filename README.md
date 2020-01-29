@@ -11,6 +11,7 @@
 |first_name_kana|string|null: false|
 |last_name_kana|string|null: false|
 |birthday|integer|null: false|
+|phone_number|integer|null: false,unique: true|
 |comment|string|
 
 
@@ -44,11 +45,11 @@
 |name|string|null: false|
 |price|integer|null: false|
 |description|text|null: false|	
-|state|string|null: false|
+|status|string|null: false|
 |category|string|null: false|
 |size|integer|	
 |postage|string|null: false|
-|region|string|null: false|
+|state|string|null: false|
 |shopping_date|integer|null: false|
 |buyer_id|integer|foreign_key: true|
 |seller_id|integer|null: false, foreign_key: true|
@@ -67,9 +68,9 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
-|number|integer|null: false|
-|security|integer|null: false|
+|user_id|integer|null: false|
+|customer_id|string|null: false|
+|card_id|string|null: false|
 
 ### Association
 - belongs_to :user
