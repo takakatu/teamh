@@ -40,12 +40,11 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|image|string|null: false|
 |name|string|null: false|
 |price|integer|null: false|
 |description|text|null: false|	
 |status|string|null: false|
-|category|string|null: false|
+|category_id|string|null: false|
 |size|integer|	
 |postage|string|null: false|
 |state|string|null: false|
@@ -58,7 +57,7 @@
 - has_many :comments
 - has_many :likes
 - has_many :images
-- has_many :category
+- belongs_to :category
 - belongs_to :brand
 - belongs_to :seller, class_name: "User"
 - belongs_to :buyer, class_name: "User"
@@ -115,7 +114,7 @@
 |ancestry|string|null: false|
 
 ### Association
-- belongs_to :item
+- has_many :items
 
 ## brandsテーブル
 
