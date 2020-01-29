@@ -11,7 +11,6 @@
 |first_name_kana|string|null: false|
 |last_name_kana|string|null: false|
 |birthday|integer|null: false|
-|phone_number|integer|null: false,unique: true|
 |comment|string|
 
 
