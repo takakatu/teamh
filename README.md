@@ -117,16 +117,6 @@
 ### Association
 - belongs_to :item
 
-## brandsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-|item_id|integer|null: false,foreigin_key: true|
-
-### Association
-- has_many :items
-
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
