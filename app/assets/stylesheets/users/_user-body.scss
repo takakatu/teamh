@@ -1,0 +1,158 @@
+h3 {
+  font-size: 16px;
+}
+
+.fas{
+  position: absolute;
+  right: 16px;
+}
+
+
+body {
+  position: relative;
+  min-height: 100%;
+  background: #f5f5f5;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  font-size: 14px;
+  color: #333;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.default-contener {
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  overflow: scroll;
+}
+
+.header {
+  height: 100px;
+  width: 100%;
+  background-color: white;
+}
+
+.navber {
+  height: 48px;
+  border-top: 1px solid #eee;
+  background: #fff;
+}
+
+.wrapper {
+  margin: 40px auto 0;
+  width: 1020px;
+  display: flex;
+  padding: 0 0 40px;
+}
+
+.side_bar{
+  margin: 0 40px 0 0;
+  width: 280px;
+  .mypage__nav {
+    &__list {
+      li {
+        border: 1px solid #eeeeee;
+        a {
+          position: relative;
+          display: block;
+          padding: 16px;
+          background: #fff;
+          font-size: 14px;
+          color: #333;
+          text-decoration: none;
+        }
+      }
+    }
+    &__head {
+      margin: 40px 0 0;
+    }
+  }
+}
+
+.container {
+  width: 700px;
+  .mypage-user-icon {
+    height: 200px;
+    padding: 20px;
+    position: relative;
+    background-image: image-url('user-bg01.jpg');
+    background-size: cover;
+    .user-icon {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      color: #333;
+      figure {
+        overflow: hidden;
+        width: 60px;
+        height: 60px;
+        margin: 0 auto;
+        border-radius: 50%;
+      }
+    }
+  }
+
+
+  .mypage-tab-container {
+    background-color: #fafafa;
+    font-size: 16px;
+    line-height: 70px;
+    margin: 40px 0 0;
+    .mypage-tab-header {
+      padding: 0 16px;
+    }
+    .tab-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      .tab-label {
+        width: 50%;
+        color: black;
+        background: LightGray;
+        order: -1;
+        font-size: 16px;
+        text-align: center;
+      }
+      .tab-content {
+        background: #fff;
+        width: 100%;
+        display: none;
+        border: 0;
+        .mypage-item-not-found {
+          background-image: image-url('logo.png');
+          padding: 160px 0 60px;
+          background-repeat: no-repeat;
+          background-position: center 40px;
+          background-size: 200px 100px;
+          text-align: center;
+          font-size: 16px;
+          color: #ccc;
+        }
+      }
+      .tab-switch:checked+.tab-label {
+        background: #fff;
+        border-top: 2px solid #ea352d;
+      }
+      .tab-switch:checked+.tab-label+.tab-content {
+        display: block;
+      }
+      .tab-switch {
+        display: none;
+      }
+    }
+  }
+}
+
+.app-banner {
+  height: 260px;
+  background-position: center;
+  background-size: cover;
+}
+
+.global-footer {
+  height: 350px;
+}

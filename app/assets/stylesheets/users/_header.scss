@@ -1,0 +1,102 @@
+.body {
+  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+}
+
+
+.pcHeader .headerInner {
+  max-width: 1040px;
+  width: 100%;
+  min-height: 82px;
+  margin: 0 auto;
+  padding: 15px 0 0;
+}
+
+.head-box {
+  background-color: white;
+}
+
+.mainHeader {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+.nav {
+  font-size: 14px;
+  display: flex;
+  margin-bottom: 10px;
+}
+ul.listsLeft {
+  position: relative;
+  display: flex;
+a {
+  color: #333;
+  text-decoration: none;
+  line-height: 32px;
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-size: 18px;
+  padding-right: 30px;
+}
+}
+ul.listsRight {
+  margin-left: auto;
+  display: flex;
+  li.listsRight__item.listsRight__item--login {
+  color: #333;
+  line-height: 38px;
+  padding: 0 0 0 16px;
+}
+  li.listsRight__item.listsRight__item--new {
+  color: #333;
+  line-height: 38px;
+  padding: 0 0 0 16px;
+}
+a {
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  line-height: 32px;
+}
+}
+.searchBox {
+  margin-left: auto;
+  width: 83%;
+}
+form {
+  width: 100%;
+  display: flex;
+  margin-bottom: 5px;
+}
+input {
+  width: calc(100% - 26px);
+  height: 36px;
+  padding: 0 0 0 5px;
+}
+
+.pcHeader .headerInner .nav {
+  font-size: 14px;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.displayNone {
+  display: none;
+}
+.tree {
+  z-index: 2;
+  position: absolute;
+  background-color: #fff;
+  width: 240px;
+  top: 40px;
+}
+.pcHeader .headerInner .nav .listsLeft__item {
+  display: flex;
+  line-height: 38px;
+  padding: 0 0 0 16px;
+}
+.brandsPulldown {
+    position: absolute;
+    z-index: 1;
+    background-color: #fff;
+}
