@@ -1,0 +1,22 @@
+.container
+  .mypage-user-icon
+    %a.user-icon{href: "#"}
+      %figure
+        = image_tag 'member_photo_noimage_thumb.png', :size =>'60x60'
+
+  -# 購入した商品一覧
+  .mypage-tab-container
+    %h2.mypage-tab-header
+      購入した商品
+    .tab-wrap
+      %input#TAB-01.tab-switch{checked: "checked", name: "TAB", type: "radio"}
+      %label.tab-label{for: "TAB-01"} 取引中
+      .tab-content
+        %ul#mypage-tab-transaction-now.mypage-item-list.tab-pane.active
+          %li.mypage-item-not-found.bold 取引中の商品がありません
+      %input#TAB-02.tab-switch{name: "TAB", type: "radio"}
+      %label.tab-label{for: "TAB-02"} 過去の取引
+      .tab-content
+        %ul#mypage-tab-transaction-now.mypage-item-list.tab-pane.active
+          %li.mypage-item-not-found.bold 過去の取引した商品がありません
+

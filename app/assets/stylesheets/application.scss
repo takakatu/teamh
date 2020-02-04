@@ -9,3 +9,9 @@
 @import "./pickupContainer";
 @import "./appBanner";
 @import "./footer";
+// ユーザーマイページ
+@import "users/header";
+@import "users/log_out";
+@import "users/payment";
+@import "users/user-body";
+@import "users/appBanner";

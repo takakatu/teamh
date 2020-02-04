@@ -1,0 +1,54 @@
+.container {
+  .l-container {
+    text-align: center;
+    background-color: white;
+    height: 420px;
+    .l-container__head {
+      font-size: 30px;
+      border-bottom: 1px solid #eee;
+      line-height: 70px;
+    }
+    .l-single-innner {
+      padding: 64px;
+      .l-single-content {
+        margin: 0 142px 0 0;
+        .l-chapter-sub-head {
+          font-weight: bolder;
+        }
+      }
+      .form-box {
+        height: 130px;
+        border-bottom: 1px solid #eee;
+        .swtting-add-card {
+          padding: 24px 0;
+          .btn-default-red {
+            background-color: red;
+            height: 60px;
+            width: 300px;
+            position: relative;
+            margin: 10px auto;
+            .fa-credit-card {
+              font-size: 17px;
+              color: white;
+              position: absolute;
+              top: 20px;
+              left: 10px;
+              font-weight: 100;
+            }
+          }
+        }
+      }
+      .settings-not-regist {
+        display: block;
+        margin: 40px 0 0;
+        text-align: right;
+        color: #0099e8;
+        position: relative;
+        .fa-angle-right{
+          position: absolute;
+          right: auto;
+        }
+      }
+    }
+  }
+}

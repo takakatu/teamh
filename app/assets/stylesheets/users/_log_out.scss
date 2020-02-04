@@ -1,0 +1,22 @@
+.container{
+  width: 700px;
+  .single-inner {
+    background-color: #fafafa;
+    height: 200px;
+    padding: 20px;
+    position: relative;
+    margin: 8px 0 0;
+    .log-out-content {
+      position: relative;
+      top: 70px;
+      left: 170px;
+      .btn-defaultbtn-red {
+        color: white;
+        background: red;
+        height: 60px;
+        width: 300px;
+        font-size: 16px;
+      }
+    }
+  }
+}
