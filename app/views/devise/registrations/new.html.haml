@@ -1,0 +1,110 @@
+.body
+  .header
+    .header-box
+      .header-logo
+
+
+  .form1
+    .form-title 会員情報入力
+    = form_for(@user, url: user_registration_path) do |f| 
+      .form-group
+        = render "devise/shared/error_messages", resource: @user
+        .nyuuryoku
+          .form-group__box
+            = f.label :ニックネーム ,class:'label'
+            %span 必須
+            = f.text_field :nickname ,class:'input' ,placeholder: '　例）TECH 太郎   '
+
+          .form-group__box
+            = f.label :email ,class:'label'
+            %span 必須
+            = f.email_field :email, autofocus: true, autocomplete: "email", class: 'input',placeholder: '   PC・携帯どちらでも可  '
+
+          .form-group__box
+            = f.label :パスワード ,class:'label'
+            - if @minimum_password_length = 7
+              %em
+                (#{@minimum_password_length} 文字以上)
+            %span 必須
+            = f.password_field :password, autocomplete: "new-password", class: 'input',pattern: "^([a-zA-Z0-9]{7,})$", placeholder: '   半角英数７文字以上  '
+
+          .form-group__box
+            = f.label :パスワード確認 ,class:'label'
+            %span 必須
+            = f.password_field :password_confirmation, autocomplete: "new-password", class: 'input',pattern: "^([a-zA-Z0-9]{7,})$"
+
+          .form-group__box
+            .form-group__box__label
+            = f.label :お名前（全角）,class:'label'
+            %span 必須
+            .form-group__box__lname
+              = f.text_field :first_name,class:'input-half', placeholder: '   例）TECH  '
+              = f.text_field :last_name ,class:'input-half', placeholder: '    例）太郎 '
+
+              
+              
+          .form-group__box
+            .form-group__box__furi
+              = f.label :お名前（ふりがな）,class:'label'
+              %span 必須
+            .form-group__box__lnamek
+              = f.text_field :last_name_kana ,class:'input-half', placeholder: '   例）てっく  '
+              = f.text_field :first_name_kana ,class:'input-half', placeholder: '   例）たろう  '
+          .form-group__box
+            .form-group__box__birthday
+              = f.label :生年月日,class:'label', placeholder: '　　半角数字８文字入力'
+              %span 必須
+              = f.text_field :birthday, maxlength: 8 , class:'input',placeholder: '   半角数字８文字入力' 
+
+          .form-group__box__actions
+            %button.next-bth{type: "submit" } 次へ進む
+
+
+  .footer
+    %ul.contents
+      %li.content
+        %h2.content__head メルカリについて
+        %ul
+          %li
+            = link_to "#" do 
+              会社概要（運営会社）
+          %li
+            = link_to "#" do 
+              プライバシーポリシー
+          %li
+            = link_to "#" do 
+              FURIMA利用規約
+          %li
+            = link_to "#" do 
+              ポイントに関する特約
+      %li.content
+        %h2.content__head メルカリを見る
+        %ul
+          %li
+            = link_to "#" do 
+              カテゴリー一覧
+          %li
+            = link_to "#" do 
+              ブランド一覧
+      %li.content
+        %h2.content__head ヘルプ＆ガイド
+        %ul
+          %li
+            = link_to "#" do 
+              FURIMAガイド
+          %li
+            = link_to "#" do 
+              FURIMAロゴ利用ガイドライン
+          %li
+            = link_to "#" do 
+              お知らせ
+    .footer__logo
+      %a{:href => "/"}
+        = image_tag('logo.png',width:150)
+    %p © FURIMA
+ 
+
+
+
+
+

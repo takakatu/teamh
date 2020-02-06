@@ -1,0 +1,103 @@
+
+.body
+  .header
+    .header-box
+      .header-logo
+
+
+
+
+  .form1
+    .form-title 送付先住所入力       
+    = form_for(@address) do |f|
+      .form-group
+        = render "devise/shared/error_messages", resource: @address 
+        .nyuuryoku-address
+          .form-group__box1
+            .form-group__box1__label
+            = f.label :送付先氏名（全角）,class:'label'
+            %span 必須
+
+            .form-group__box1__lname
+              = f.text_field :d_first_name,class:'input-half', placeholder: '   例）TECH  '
+              = f.text_field :d_last_name ,class:'input-half', placeholder: '    例）太郎 '
+          .form-group__box1
+            .form-group__box1__furi
+              = f.label :送付先氏名（ふりがな）,class:'label'
+              %span 必須
+
+            .form-group__box1__lnamek
+              = f.text_field :d_last_name_kana ,class:'input-half', placeholder: '   例）てっく  '
+              = f.text_field :d_first_name_kana ,class:'input-half', placeholder: '   例）たろう  '
+
+          .form-group__box1
+            = f.label :郵便番号 ,class:'label'
+            %span 必須
+            = f.number_field :zip ,class:'input' ,placeholder: '半角数字入力 '
+
+          .form-group__box1
+            = f.label :都道府県,class:'label'
+            %span 必須
+            = f.text_field :state ,class:'input' 
+
+          .form-group__box1
+            = f.label :市町村,class:'label'
+            %span 必須
+            = f.text_field :city,class:'input' 
+
+          .form-group__box1
+            = f.label :番地１,class:'label'
+            %span 必須
+            = f.text_field :street,class:'input' 
+
+          .form-group__box1
+            = f.label :番地２,class:'label'
+            = f.text_field :building,class:'input' 
+
+          .form-group__actions1
+            %button.next-bth1{type: "submit" } 次へ進む
+-# = render "devise/shared/links"
+
+
+.footer
+  %ul.contents
+    %li.content
+      %h2.content__head メルカリについて
+      %ul
+        %li
+          = link_to "#" do 
+            会社概要（運営会社）
+        %li
+          = link_to "#" do 
+            プライバシーポリシー
+        %li
+          = link_to "#" do 
+            FURIMA利用規約
+        %li
+          = link_to "#" do 
+            ポイントに関する特約
+    %li.content
+      %h2.content__head メルカリを見る
+      %ul
+        %li
+          = link_to "#" do 
+            カテゴリー一覧
+        %li
+          = link_to "#" do 
+            ブランド一覧
+    %li.content
+      %h2.content__head ヘルプ＆ガイド
+      %ul
+        %li
+          = link_to "#" do 
+            FURIMAガイド
+        %li
+          = link_to "#" do 
+            FURIMAロゴ利用ガイドライン
+        %li
+          = link_to "#" do 
+            お知らせ
+  .footer__logo
+    %a{:href => "/"}
+      = image_tag('logo.png',width:150)
+  %p © FURIMA

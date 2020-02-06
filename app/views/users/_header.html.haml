@@ -3,7 +3,8 @@
     .headerInner
       .mainHeader
         .image
-          = image_tag('logo.png',width:150)
+          =link_to root_path do
+            = image_tag('logo.png',width:150)
         .searchBox
           %form{action: "#", method: "get"}
             %input{:name => "utf8", :type => "hidden", :value => "✓"}/
