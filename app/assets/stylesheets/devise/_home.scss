@@ -13,13 +13,11 @@
   background-color:#f5f5f5;
 
   .header-logo{
-    // position: absolute;
     background-image: image-url('logo.png');  
     background-size: cover;
     height: 50px;
     width: 180px;
     margin: auto;
-    // display: block;
   }
 }
 
@@ -33,17 +31,12 @@
   margin-left: auto;
   margin-right: auto;
   
-  
-
   &__actions1{
     height: 70px;
     
-
     .next-bth{
       width: 80%;
-     
       height: 60px;
-      
       font-size: 15px;
       color: ivory;
       background-color: #ea352d;
@@ -51,15 +44,8 @@
   }
 }
 
-
-
-
-
-
-
 .body{
   background-color:#f5f5f5;
-
 
   .input {
     height: 40px;
@@ -67,7 +53,6 @@
     border-radius: 2px;
     margin: 8px 0 0;
   }
-  
 
   span {
     background: #EA352D;
@@ -79,13 +64,10 @@
     right: 12px;
   }
   
-  
   .label{
     padding-left: 5px;
   }
   
-    
-
     .form1{
       width: 30%;
       background-color: white;
@@ -152,8 +134,6 @@
 
 }
 
-
-// あとで誰かにもらうところ多分幅とかはそのままでよし。
     .footer{
       height: 250px;
       width: 100vw;
