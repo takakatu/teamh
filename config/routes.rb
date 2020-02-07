@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:index]
+  resources :displayer, only: [:index]
 
 end
   

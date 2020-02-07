@@ -1,0 +1,137 @@
+-# コンテナヘッダー
+.single-container
+  #sell-container
+    .sell-container__inner
+      %h2.sell-head 商品の情報を入力
+
+      -# フォーム
+        -# 出品画像
+      %form.sell-form
+        .sell-upload-box
+          %h3.sell-upload-head 
+            出品画像
+            %span.form-require 必須
+          %p 最大10枚までアップロードできます
+          .sell-dropbox-container
+            .sell-upload-items-container
+            .sell-upload-drop-box
+              %input.sell-upload-drop{type: "file", multiple: "", name: "image1"}
+              %pre.visible-pc
+                ドラッグアンドドロップ
+                またはクリックしてファイルをアップロード
+        -# 商品
+        .sell-content
+          .form-group
+            %label 
+              商品名
+              %span.form-require 必須
+            %input.input-default{type: "text", placeholder: "商品名（必須40文字まで）"} 
+          .form-group
+            %label
+              商品の説明
+              %span.form-require 必須
+            %textarea.textarea-default{rows: "5", placeholder: "商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など）"}
+
+        -# 詳細
+        .sell-content
+          .sell-content-box
+            %h3.sell-sub-head 商品の詳細
+            .sell-form-box
+              .form-group
+                %label
+                  カテゴリー
+                  %span.form-require 必須
+                .select-wrap
+                  %select.select-default
+                    %option{:value => ""} ---
+                    %option{:value => "1"} レディース
+                    %option{:value => "2"} メンズ
+                    %option{:value => "3"} ベビー・キッズ
+                    %option{:value => "4"} インテリア・住まい・小物
+                    %option{:value => "5"} 本・音楽・ゲーム
+                    %option{:value => "1328"} おもちゃ・ホビー・グッズ
+                    %option{:value => "6"} コスメ・香水・美容
+                    %option{:value => "7"} 家電・スマホ・カメラ
+                    %option{:value => "8"} スポーツ・レジャー
+                    %option{:value => "9"} ハンドメイド
+                    %option{:value => "1027"} チケット
+                    %option{:value => "1318"} 自動車・オートバイ
+                    %option{:value => "10"} その他
+              .form-group
+                %label
+                  サイズ
+                  %span.form-require 必須
+                .select-wrap
+                  %select.select-default
+              .form-group
+                %label
+                  商品の状態
+                  %span.form-require 必須
+                .select-wrap
+                  %select.select-default
+                    %option{:value => ""} ---
+                    %option{:value => "1"} 新品、未使用
+                    %option{:value => "2"} 未使用に近い
+                    %option{:value => "3"} 目立った傷や汚れなし
+                    %option{:value => "4"} やや傷や汚れあり
+                    %option{:value => "5"} 傷や汚れあり
+                    %option{:value => "6"} 全体的に状態が悪い
+
+
+
+        -# 発送
+        .sell-content
+          .sell-content-box
+            %h3.sell-sub-head 発送について
+            .sell-form-box
+              .form-group
+                %label
+                  配送料の負担
+                  %span.form-require 必須
+                .select-wrap
+                  %i.icon-arrow-bottom
+                  %select.select-default
+              .form-group
+                %label
+                  発送元の地域
+                  %span.form-require 必須
+                .select-wrap
+                  %i.icon-arrow-bottom
+                  %select.select-default
+              .form-group
+                %label
+                  発送までの日数
+                  %span.form-require 必須
+                .select-wrap
+                  %i.icon-arrow-bottom
+                  %select.select-default
+
+        -# 販売
+        .sell-content
+          .sell-content-box
+            %h3.sell-sub-head 販売価格
+            .sell-form-box
+              %ul.sell-price
+                %li.form-group
+                  .clearfix
+                    %label.left
+                      価格
+                      %span.form-require 必須
+                    .l-right
+                      ¥
+                      %div.sell-price-input
+                        %input.input-default{placeholder: "例)300"}
+                %li.clearfix
+                  %l-left 販売手数料(10%)
+                  %l-right -
+                %li.clearfix
+                  %l-left 営業利益
+                  %l-right -
+
+          -# ボタン
+        .sell-content
+          .sell-btn
+            %button.btn-default.btn-red{type: "submit"}出品する
+          .sell-btn-box
+            .sell-btn-gray
+              = link_to "戻る",root_path,class: "btn-default.btn-gray"
