@@ -1,0 +1,17 @@
+.header{
+  position: relative;
+  padding-top: 25px;
+  height: 80px;
+  width: 100vw;
+  background-color:#f5f5f5;
+
+  .header-logo{
+    // position: absolute;
+    background-image: image-url('logo.png');  
+    background-size: cover;
+    height: 50px;
+    width: 180px;
+    margin: auto;
+    // display: block;
+  }
+}
