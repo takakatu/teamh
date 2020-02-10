@@ -9,12 +9,12 @@ class ItemsController < ApplicationController
     5.times { @item.images.build}
     @category_parent_array = ["---"]
     Category.where(ancestry: nil).each do |parent|
-      @category_parent_array << parent.name
+      @category_parent_array = parent.name
     end
   end
 
   def create
-    @item = Item.create(item_params)
+    @item = Item.new(item_params)
     if @item.save
       redirect_to root_path
     else
