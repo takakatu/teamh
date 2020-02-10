@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_05_124908) do
+ActiveRecord::Schema.define(version: 2020_02_10_022618) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "d_first_name", null: false
@@ -26,6 +26,38 @@ ActiveRecord::Schema.define(version: 2020_02_05_124908) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.index ["user_id"], name: "index_addresses_on_user_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.string "ancestry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.string "photo", null: false
+    t.integer "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_images_on_item_id"
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "description", null: false
+    t.string "size", null: false
+    t.string "status", null: false
+    t.string "shipping_charges", null: false
+    t.string "postage", null: false
+    t.string "shopping_date", null: false
+    t.integer "seller_id"
+    t.integer "buyer_id"
+    t.integer "exhibiting", default: 0, null: false
+    t.integer "category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "price"
   end
 
   create_table "users", force: :cascade do |t|

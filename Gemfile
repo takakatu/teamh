@@ -76,3 +76,8 @@ gem 'haml-rails', "~> 2.0"
 gem 'font-awesome-sass'
 gem 'devise'
 gem 'sass-rails', '~> 5.0'
+gem 'ancestry'
+gem 'carrierwave'
+gem 'pry-rails'
+gem 'mini_magick'
+gem 'jquery-rails'
