@@ -13,7 +13,7 @@
           .form-group__box
             = f.label :ニックネーム ,class:'label'
             %span 必須
-            = f.text_field :nickname ,class:'input' ,placeholder: '　例）TECH 太郎   '
+            = f.text_field :nickname ,class:'input' ,placeholder: '  例）TECH 太郎   '
 
           .form-group__box
             = f.label :email ,class:'label'
@@ -52,7 +52,7 @@
               = f.text_field :first_name_kana ,class:'input-half', placeholder: '   例）たろう  '
           .form-group__box
             .form-group__box__birthday
-              = f.label :生年月日,class:'label', placeholder: '　　半角数字８文字入力'
+              = f.label :生年月日,class:'label', placeholder: '  半角数字８文字入力'
               %span 必須
               = f.text_field :birthday, maxlength: 8 , class:'input',placeholder: '   半角数字８文字入力' 
 
