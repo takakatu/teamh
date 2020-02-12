@@ -19,5 +19,13 @@ Rails.application.routes.draw do
   end
   resources :images, only: [:new, :create]
 
+  resources :creditcards, only: [:new, :show] do
+    collection do
+      post 'show', to: 'creditcards#show'
+      post 'pay', to: 'creditcards#pay'
+      post 'delete', to: 'creditcards#delete'
+    end
+  end
+
 end
   
