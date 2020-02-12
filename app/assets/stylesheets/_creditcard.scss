@@ -1,0 +1,152 @@
+
+.mypage-card__right {
+  padding: 10px;
+  background-color: white;
+}
+
+.signup-main4__headtext {
+  border-bottom: 1px solid #f5f5f5;
+  padding: 8px 24px;
+  margin-bottom: 30px;
+  height: 30px;
+  text-align: center;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: bold;
+}
+
+.card-input-content4{
+  margin: auto;
+}
+.card-input-content5 {
+  text-align: center;
+}
+
+.card-images {
+  margin-bottom: 30px;
+  display: flex;
+}
+
+
+.card-number {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.card-limmit {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.card-number-form {
+  margin-bottom: 10px;
+}
+
+.number.input-default {
+  height:50px;
+}
+
+.select-wrap {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.card-code {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.card-cvc-form {
+  margin-bottom: 10px;
+}
+
+.cvc {
+  height: 50px;
+}
+// 登録ボタン
+.btn-block {
+  display: block;
+}
+#card_token{
+  text-align: center;
+}
+.btn-default {
+  background-color: red;
+  height: 60px;
+  color: white;
+  width:400px;
+  font-size: 16px;
+}
+.card-delete__btnform {
+  text-align: center;
+}
+
+
+.select-wrap-half {
+  width: 30%;
+}
+
+select#exp_month{
+  width: 100%;
+  height: 50px;
+  
+}
+
+select#exp_year {
+  width: 100%;
+  height: 50px;
+  margin-left: 50px;
+}
+
+span-month {
+  display: inline;
+  margin-left: 20px;
+}
+
+span-year {
+  display: inline;
+  margin-left: 70px;
+}
+
+.card-delete {
+  width: 100%;
+  height: 500px;
+  position: relative;
+
+}
+
+.card-delete__inner {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  margin: auto;
+  background-color: white;
+  text-align: center;
+}
+
+
+label-card1 {
+  line-height: 40px;
+}
+
+.card-delete__numbertext {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.card-delete__number {
+  margin-bottom: 10px;
+}
+
+.card-delete__limmittext {
+  margin-bottom: 10px;
+}
+
+.card-delete__limmit {
+  margin-bottom: 10px;
+}
+

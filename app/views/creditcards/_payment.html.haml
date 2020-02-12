@@ -1,0 +1,14 @@
+.container
+  .l-container
+    %h2.l-container__head 支払い方法
+    .l-single-innner
+      .l-single-content
+        %h3.l-chapter-sub-head クレジットカード一覧
+      .form-box
+        %form.swtting-add-card{action: new_card_path, novalidate: "novalidate"}
+          %button.btn-default{type: "submit"} 
+            %i.fas.fa-credit-card クレジットカードを追加する
+      .settings-not-regist
+        %a{href: "", target: "_blank"}
+        %span 支払い方法について
+        %i.fas.fa-angle-right
