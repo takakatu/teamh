@@ -81,5 +81,6 @@ gem 'carrierwave'
 gem 'pry-rails'
 gem 'mini_magick'
 gem 'jquery-rails'
-
+gem 'payjp'
+gem 'dotenv-rails'
 
