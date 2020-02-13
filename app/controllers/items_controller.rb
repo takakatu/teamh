@@ -18,7 +18,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
-      redirec_to new_item_path
+      redirect_to new_item_path
     end
   end
 
