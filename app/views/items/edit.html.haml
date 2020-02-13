@@ -1,0 +1,122 @@
+-# コンテナヘッダー
+.single-container
+  #sell-container
+    .sell-container__inner
+      %h2.sell-head 商品の情報を編集
+      = form_with(model: @item, local: true ) do |f|
+
+        .sell-form
+          .sell-upload-box
+            %h3.sell-upload-head 
+              出品画像
+              %span.form-require 必須
+            %p 最大10枚までアップロードできます
+            .sell-dropbox-container
+              .sell-upload-items-container
+              .sell-upload-drop-box
+                = f.fields_for :images do |image|
+                  = image.file_field :photo
+          -# 商品
+          .sell-content
+            .form-group
+              %label 
+                商品名
+                %span.form-require 必須
+              =f.text_field :name, placeholder: "商品名（必須40文字まで）", class: "input-default"
+            .form-group
+              %label
+                商品の説明
+                %span.form-require 必須
+              =f.text_area :description, rows: "5", placeholder: "商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など）", class: "textarea-default"
+
+          -# 詳細
+          .sell-content
+            .sell-content-box
+              %h3.sell-sub-head 商品の詳細
+              .sell-form-box
+                .form-group-top
+                  = f.label :カテゴリー, class: "label" do
+                    カテゴリー
+                    %span.form-requires 必須
+                  %br
+                .listing-product-detail__category
+                  = f.select :category_id,options_for_select(@category_parent_array.map{|c|[c, {}]}, @item.category.parent.parent.name), {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+                #children_wrapper
+                  = f.select :category_id, options_for_select(@category_child_array.map{|c|[c[:name], c[:id], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @item.category.parent.id), {}, {class: 'listing-select-wrapper__box--select', id: 'child_category'}
+                #grandchildren_wrapper
+                  = f.select :category_id, options_for_select(@category_grandchild_array.map{|c|[c[:name], c[:id], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @item.category.id), {}, {class: 'listing-select-wrapper__box--select', id: 'grandchild_category'}
+
+                  
+
+                  
+                .form-group
+                  %label
+                    サイズ
+                    %span.form-require 必須
+                  .select-wrap
+                    =f.select :size,['---', ['XXS以下', 1], ['XS', 2], ['S', 3], ['M', 4], ['L', 5], ['XL', 6], ['2XL', 7], ['3XL', 8], ['4XL以上', 9], ['FREE SIZE', 10]], {}, {class: 'select-default'}
+                .form-group
+                  %label
+                    商品の状態
+                    %span.form-require 必須
+                  .select-wrap
+                    =f.select :status,['---', ['新品、未使用', 1], ['未使用に近い', 2], ['目立った傷や汚れなし', 3], ['やや傷や汚れあり', 4], ['傷や汚れあり', 5], ['全体的に状態が悪い', 6]], {}, {class: 'select-default'}
+
+
+
+          -# 発送
+          .sell-content
+            .sell-content-box
+              %h3.sell-sub-head 発送について
+              .sell-form-box
+                .form-group
+                  %label
+                    配送料の負担
+                    %span.form-require 必須
+                  .select-wrap
+                    %i.icon-arrow-bottom
+                    =f.select :shipping_charges,['---', ['送料込み(出品者負担)', 1], ['着払い(購入者負担)', 2]], {}, {class: 'select-default'}
+                .form-group
+                  %label
+                    発送元の地域
+                    %span.form-require 必須
+                  .select-wrap
+                    %i.icon-arrow-bottom
+                    =f.select :postage,['---', ['北海道', 1], ['青森県', 2], ['岩手県', 3], ['宮城県', 4], ['秋田県', 5], ['山形県', 6], ['福島県', 7], ['茨城県', 8], ['栃木県', 9], ['群馬県', 10], ['埼玉県', 11], ['千葉県', 12], ['東京都', 13], ['神奈川県', 14], ['新潟県', 15], ['富山県', 16], ['石川県', 17], ['福井県', 18], ['山梨県', 19], ['長野県', 20], ['岐阜県', 21], ['静岡県', 22], ['愛知県', 23], ['三重県', 24], ['滋賀県', 25], ['京都府', 26], ['大阪府', 27], ['兵庫県', 28], ['奈良県', 29], ['和歌山県', 30], ['鳥取県', 31], ['島根県', 32], ['岡山県', 33], ['広島県', 34], ['山口県', 35], ['徳島県', 36], ['香川県', 37], ['愛媛県', 38], ['高知県', 39], ['福岡県', 40], ['佐賀県', 41], ['長崎県', 42], ['熊本県', 43], ['大分県', 44], ['宮崎県', 45], ['鹿児島県', 46], ['沖縄県', 47]], {}, { class: 'select-default' }
+                .form-group
+                  %label
+                    発送までの日数
+                    %span.form-require 必須
+                  .select-wrap
+                    %i.icon-arrow-bottom
+                    =f.select :shopping_date,['---', ['1~2日で発送', 1], ['2~3日で発送', 2], ['4~7日で発送', 3]], {}, { class: 'select-default' }
+
+          -# 販売
+          .sell-content
+            .sell-content-box
+              %h3.sell-sub-head 販売価格
+              .sell-form-box
+                %ul.sell-price
+                  %li.form-group
+                    .clearfix
+                      %label.left
+                        価格
+                        %span.form-require 必須
+                      .l-right
+                        ¥
+                        %div.sell-price-input
+                          =f.text_field :price, placeholder: "例)300", class: 'input-default'
+                  %li.clearfix
+                    %l-left 販売手数料(10%)
+                    %l-right -
+                  %li.clearfix
+                    %l-left 営業利益
+                    %l-right -
+
+            -# ボタン
+          .sell-content
+            .sell-btn
+              %button.btn-default.btn-red{type: "submit"}編集する
+            .sell-btn-box
+              .sell-btn-gray
+                = link_to "戻る",users_path,class: "btn-default.btn-gray"
