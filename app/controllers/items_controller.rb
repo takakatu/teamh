@@ -2,7 +2,8 @@ class ItemsController < ApplicationController
   before_action :set_items, only: [:show, :edit]
   
   def index
-
+    @items = Item.order('id DESC').limit(3)
+    @older_items = Item.order('RAND()').limit(3)
   end
 
   def new
