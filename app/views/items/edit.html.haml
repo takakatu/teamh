@@ -16,9 +16,6 @@
               .sell-upload-drop-box
                 = f.fields_for :images do |image|
                   = image.file_field :photo
-                %pre.visible-pc
-                  ドラッグアンドドロップ
-                  またはクリックしてファイルをアップロード
           -# 商品
           .sell-content
             .form-group
@@ -37,13 +34,21 @@
             .sell-content-box
               %h3.sell-sub-head 商品の詳細
               .sell-form-box
-                .listing-form-box
-                  .listing-product-detail__category
-                    %label カテゴリー
-                    %span.form-require 必須
-                    .listing-select-wrapper
-                      .column_title1       
-                        = f.select :category_id,[["---", 0], ["レディース", 1],["メンズ", 2],["ベビー・キッズ", 3],["インテリア・住まい・小物",4],["本・音楽・ゲーム",5],["おもちゃ・ホビー・グッズ",6],["コスメ・香水・美容",7],["家電・スマホ・カメラ", 8],["スポーツ・レジャー",9],["ハンドメイド", 10],["チケット", 11],["自動車・オートバイ", 12],["その他",13]],  {}, {class: 'select-default'}
+                .form-group-top
+                  = f.label :カテゴリー, class: "label" do
+                    カテゴリー
+                    %span.form-requires 必須
+                  %br
+                .listing-product-detail__category
+                  = f.select :category_id,options_for_select(@category_parent_array.map{|c|[c, {}]}, @item.category.parent.parent.name), {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+                #children_wrapper
+                  = f.select :category_id, options_for_select(@category_child_array.map{|c|[c[:name], c[:id], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @item.category.parent.id), {}, {class: 'listing-select-wrapper__box--select', id: 'child_category'}
+                #grandchildren_wrapper
+                  = f.select :category_id, options_for_select(@category_grandchild_array.map{|c|[c[:name], c[:id], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @item.category.id), {}, {class: 'listing-select-wrapper__box--select', id: 'grandchild_category'}
+
+                  
+
+                  
                 .form-group
                   %label
                     サイズ
