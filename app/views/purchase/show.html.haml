@@ -9,11 +9,9 @@
         %hr
         .buy-content.item-review
           .item-review__image
-            画像
-            = image_tag @item.images[0].image.url
+            = image_tag @item.images[0].photo.url
           .item-review__wrapper
             .item-review__wrapper__title
-              説明
               = @item.name
             .item-review__wrapper__price
               = @item.price
@@ -23,7 +21,6 @@
             .payment-amount__title
               支払金額
             .payment-amount__amount
-              10000
               = @item.price
           %hr
           .payment-methods.buy-info
