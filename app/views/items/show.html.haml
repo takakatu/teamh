@@ -9,7 +9,6 @@
             = @item.name
           .itemBox__body
             %ul
-              %li
               - @item.images.each do |image|
                 .image-box
                   = image_tag image.photo.url
