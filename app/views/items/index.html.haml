@@ -168,7 +168,7 @@
             - @items.each do |item|
               - @image = Image.find_by(item_id: item.id)
               .productList
-                =link_to "/items/#{item.id}", method: :get do
+                =link_to item_path(item), method: :get do
                   %figure.productList--img
                     %img
                       = image_tag @image.photo.url, width: "220", height: "150"
@@ -193,7 +193,7 @@
           - @older_items.each do |item|
             - @image = Image.find_by(item_id: item.id)
             .productList
-              =link_to "/items/#{item.id}", method: :get do
+              =link_to item_path(item), method: :get do
                 %figure.productList--img
                   %img
                     = image_tag @image.photo.url, width: "220", height: "150"
