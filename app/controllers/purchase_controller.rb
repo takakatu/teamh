@@ -32,11 +32,8 @@ class PurchaseController < ApplicationController
   end
 
   def done
-    if 
       @item.update( buyer_id: current_user.id)
-    else
-      redirect_to action: "show"
-    end
+      redirect_to action: "show" unless @item.update( buyer_id: current_user.id)
   end
 
   private
