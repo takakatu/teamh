@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index]
   resources :displayer, only: [:index]
-  resources :items, only: [:index , :new, :create, :edit, :show] do
+  resources :items, only: [:index , :new, :create, :edit, :show, :update] do
     collection do
       get 'get_category_children', defaults: {format: 'json'}
       get 'get_category_grandchildren', defaults: {format: 'json'}
