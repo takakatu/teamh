@@ -49,13 +49,13 @@
                 配達先
               = link_to "#", class:"btn" do
                 %h2.change + 変更する
-            .delivery-destination__bottom
-              .delivery-destination__bottom__post-code
-                -# ="〒#{@address.post_code}"
-              .delivery-destination__bottom__address
-                -# ="#{@address.prefecture}#{@address.city}#{@address.block}#{@address.building}"
-              .delivery-destination__bottom__name
-                -# ="#{@address.last_name} #{@address.first_name}"
+            -# .delivery-destination__bottom
+            -#   .delivery-destination__bottom__post-code
+            -#     ="〒#{@address.post_code}"
+            -#   .delivery-destination__bottom__address
+            -#     ="#{@address.prefecture}#{@address.city}#{@address.block}#{@address.building}"
+            -#   .delivery-destination__bottom__name
+            -#     ="#{@address.last_name} #{@address.first_name}"
           %hr
         = form_tag(action: :pay, method: :post) do
           .submit-btn

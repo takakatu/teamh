@@ -1,11 +1,12 @@
 class PurchaseController < ApplicationController
 
-  before_action :set_item, only: [:show, :pay, :done]
+ 
 
   require 'payjp'
 
   def show
     card = Creditcard.where(user_id: current_user.id).first
+    @item = Item.find(params[:id])
     @address = Address.find_by(user_id: current_user)
     #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
     if card.blank?
@@ -22,6 +23,7 @@ class PurchaseController < ApplicationController
 
   def pay
     card = Creditcard.where(user_id: current_user.id).first
+    @item = Item.find(params[:id])
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
     :amount => @item.price, #支払金額を入力（itemテーブル等に紐づけても良い）
@@ -32,15 +34,12 @@ class PurchaseController < ApplicationController
   end
 
   def done
+    @item = Item.find(params[:id])
     @item.update( buyer_id: current_user.id)
     # @item.update( status: "closed")
   end
 
-  private
-
-  def set_item
-    @item = Item.find(params[:id])
-  end
+  
 
 
 end
