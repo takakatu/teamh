@@ -25,7 +25,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-  
+    @user = User.where(id: @item.seller_id)
   end
 
   def edit
@@ -55,7 +55,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :description, :size, :status, :shipping_charges, :postage, :shopping_date, :exhibiting, :price, :category_id, images_attributes: [:photo]).merge(seller_id: current_user.id)
+    params.require(:item).permit(:name, :description, :size_id, :status_id, :shipping_charges_id, :postage_id, :shopping_date_id, :exhibiting, :price, :category_id, images_attributes: [:photo]).merge(seller_id: current_user.id)
   end
     
 end
