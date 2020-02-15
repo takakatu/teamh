@@ -12,6 +12,6 @@ CarrierWave.configure do |config|
     region: 'ap-northeast-1'
   }
 
-  config.fog_directory  = 'freeemarket-app-67teamh'
+  config.fog_directory = 'freeemarket-app-67teamh'
   config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/freeemarket-app-67teamh'
 end
