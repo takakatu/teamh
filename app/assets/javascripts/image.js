@@ -1,16 +1,16 @@
 $(function () {
-  const buildFileField = (index)=> {
-    const html = `<div data-index="${index}" class="js-file_group">
+  const buildFileField = (num)=> {
+    const html = `<div data-index="${num}" class="js-file_group">
                     <input class="js-file" type="file"
-                    name="item[images_attributes][${index}][photo]"
-                    id="item_images_attributes_${index}_photo"><br>
+                    name="item[images_attributes][${num}][photo]"
+                    id="item_images_attributes_${num}_photo"><br>
                     <div class="js-remove">削除</div>
                   </div>`;
     return html;
   }
 
   const buildImg = (index, url)=> {
-    const html = `<img data-index="${index}" src="${url}" width="100px" height="100px">`;
+    const html = `<img data-index="${index}" photo="${url}" width="100px" height="100px">`;
     return html;
   }
 
