@@ -2,12 +2,19 @@
 
 %main.single-main
   .lsingle-container
-    %h2 購入が完了しました！
-    %p
-    = @item.name
-    %p
-    ="¥#{@item.price}(送料込み)"
-
+    .item_box
+      .item_box__item_title
+        購入が完了しました！
+    %hr
+    .lsingle-container_done
+      .lsingle-container_done__name
+        = @item.name
+      .lsingle-container_done__price
+        ="¥#{@item.price}(送料込み)"
+    %hr
+    .lsingle-container_top-page
+      =link_to root_path, class:"lsingle-container__top-page" do
+        %p トップページへ
     
 
 = render 'items/footer'
