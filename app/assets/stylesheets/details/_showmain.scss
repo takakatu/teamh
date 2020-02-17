@@ -30,6 +30,7 @@ h2.itemBox__name {
   margin: 16px 0 0;
 ul {
   display: flex;
+  flex-wrap: wrap;
   position: relative;
   object-fit: cover;
 }
