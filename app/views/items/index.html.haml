@@ -267,8 +267,10 @@
       %a{:href => "/"}
         = image_tag('logo-white.png',width:150)
     %p © FURIMA
-  = link_to new_item_path, class:"purchaseBtn" do
-    .purchaseBtn
-      %span.purchaseBtn__text 出品する
-      %img.purchaseBtn__icon
-      = image_tag('icon_camera.png',width:70)
+  -if user_signed_in? && current_user.id
+    = link_to new_item_path, class:"purchaseBtn" do
+      .purchaseBtn
+        %span.purchaseBtn__text 出品する
+        %img.purchaseBtn__icon
+        = image_tag('icon_camera.png',width:70)
+  - else

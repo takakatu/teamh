@@ -3,7 +3,7 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :images
   belongs_to :category
   belongs_to :seller, class_name: "User"
-  validates :name,:description,:status,:shipping_charges,:postage,:shopping_date,:exhibiting,:category_id, presence: true
+  validates :name,:description,:status,:shipping_charges,:postage,:shopping_date,:exhibiting,:category_id,:price, :images, presence: true
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :size
   belongs_to_active_hash :status
