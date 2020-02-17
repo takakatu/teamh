@@ -32,6 +32,7 @@ ul {
   display: flex;
   position: relative;
   object-fit: cover;
+  flex-wrap: wrap;
 }
 ul>li {
     display: flex;
