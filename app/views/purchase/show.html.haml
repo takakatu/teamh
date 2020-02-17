@@ -9,8 +9,6 @@
         %hr
         .buy-content.item-review
           .item-review__image
-            - @item.images.each_with_index do |image, i|
-              = image_tag image.photo.url, data: { index: i }
           .item-review__wrapper
             .item-review__wrapper__title
               = @item.name
