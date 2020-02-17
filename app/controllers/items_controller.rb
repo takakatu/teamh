@@ -20,6 +20,15 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @item = Item.find_by(id: params[:id])
+    if @item.destroy
+       redirect_to root_path
+    else
+      redirect_to item_path(item)
+    end 
+  end
+
   def show
     @user = User.where(id: @item.seller_id)
   end

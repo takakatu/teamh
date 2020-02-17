@@ -74,7 +74,7 @@
               - if @item.buyer_id.present?
               - elsif user_signed_in? && current_user.id == @item.seller_id
                 = link_to "編集する", edit_item_path, class:"hensyu_btn"
-                = link_to "この商品を削除する", item_path(@item.id),method: :delete, class:"akai_btn"
+                = link_to "この商品を削除する", item_path(@item), method: :delete
               - elsif user_signed_in?
                 = link_to purchase_path(@item.id), class:"akai_btn" do
                   購入画面に進む
