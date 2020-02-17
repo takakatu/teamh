@@ -65,13 +65,19 @@
                 ブランド
               %ul.brandsPulldown.displayNone
           %ul.listsRight
-            %li.listsRight__item.listsRight__item--login
-              = link_to "新規登録",  new_user_registration_path 
-            %li.listsRight__item.listsRight__item--new
-              = link_to "ログイン",  new_user_session_path 
-              = link_to destroy_user_session_path  method: :delete do
-                ログアウト
-              = link_to "マイページ", users_path
+            - if user_signed_in? && current_user.id
+              %li.listsRight__item.listsRight__item--login
+                = link_to "新規登録",  new_user_registration_path 
+              %li.listsRight__item.listsRight__item--new
+                = link_to "ログイン",  new_user_session_path 
+                = link_to destroy_user_session_path  method: :delete do
+                  ログアウト
+                = link_to "マイページ", users_path
+            - else
+              %li.listsRight__item.listsRight__item--login
+                = link_to "新規登録",  new_user_registration_path 
+              %li.listsRight__item.listsRight__item--new
+                = link_to "ログイン",  new_user_session_path 
   .main
     %section.mainVisual
       .content

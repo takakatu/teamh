@@ -1,3 +1,4 @@
+// 購入確認画面
 main {
   display: block;
   padding: 0 0 40px;
@@ -37,9 +38,11 @@ main {
   justify-content: space-between;
   display: flex;
   &__title {
+    line-height: initial;
     font-size: large;
   }
   &__amount{
+    font-size: 30px;
     text-align: right;
   }
 }
@@ -50,14 +53,13 @@ main {
   padding: 24px 0;
 }
 
-
-
-.botton_form {
-  display: block;
+.submit-btn{
+  width: 100%;
   .purchase {
-    width: 300px;
+    width: 400px;
     height: 60px;
-    background-color: grey;
+    background-color: red;
+    color: #fff;
     margin: 25px auto;
     text-align: center;
     line-height: 55px;
@@ -65,7 +67,24 @@ main {
   }
 }
 
-
 .change {
-  padding-top: 10px;
+  padding: 10px 0;
+  margin: 0 auto;
+}
+
+// 購入完了画面
+.lsingle-container_done {
+  text-align: center;
+  &__name {
+    padding: 10px 0;
+    font-size: x-large;
+  }
+  &__price {
+    padding: 10px 0;
+  }
+}
+
+.lsingle-container_top-page {
+  text-align: center;
+  padding: 10px 0;
 }
