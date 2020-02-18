@@ -26,17 +26,17 @@ $(function () {
     const blobUrl = window.URL.createObjectURL(file);
 
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
-      img.setAttribute('photo', blobUrl);
+      img.setAttribute('src', blobUrl);
     } else {
         $('#previews').append(buildImg(targetIndex, blobUrl));
         $('#image-box').append(buildFileField(fileIndex[0]));
         fileIndex.shift();
-        fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
+        fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
     }
   });
 
   $('#image-box').on('click', '.js-remove', function() {
-    const targetIndex = $(this).parent().data('index')
+    const targetIndex = $(this).parent().data('index');
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
     if (hiddenCheck) hiddenCheck.prop('checked', true);
 
