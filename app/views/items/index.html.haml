@@ -173,11 +173,17 @@
           .productLists
             - @items.each do |item|
               - @image = Image.find_by(item_id: item.id)
+
               .productList
                 =link_to item_path(item), method: :get do
                   %figure.productList--img
                     %img
                       = image_tag @image.photo.url, width: "220", height: "150"
+                      - if item.buyer_id.present?
+                        .items-box_photo__sold
+                          .items-box_photo__sold__inner
+                            SOLD
+                      
                   .productList--body
                     %h3
                       = item.name
@@ -202,7 +208,11 @@
               =link_to item_path(item), method: :get do
                 %figure.productList--img
                   %img
-                    = image_tag @image.photo.url, width: "220", height: "150"
+                    = image_tag @image.photo.url, width: "220", height: "170" 
+                    - if item.buyer_id.present?
+                      .items-box_photo__sold
+                        .items-box_photo__sold__inner
+                          SOLD
                 .productList--body
                   %h3
                     = item.name
@@ -273,4 +283,4 @@
         %span.purchaseBtn__text 出品する
         %img.purchaseBtn__icon
         = image_tag('icon_camera.png',width:70)
-  - else
+  -# - else

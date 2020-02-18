@@ -36,7 +36,8 @@ class PurchaseController < ApplicationController
   end
 
   def done
-    @item.update( buyer_id: current_user.id)
+    @product_purchaser= Item.find(params[:id])
+    @product_purchaser.update( buyer_id: current_user.id)
     redirect_to action: "show" unless @item.update( buyer_id: current_user.id)
   end
 
