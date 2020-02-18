@@ -32,6 +32,6 @@
           支払い方法
           %i.fas.fa-angle-right
       %li 
-        = link_to "#", class:"mypage__nav__list__item" do
+        = link_to destroy_user_session_path, method: :delete, class:"mypage__nav__list__item" do
           ログアウト
           %i.fas.fa-angle-right

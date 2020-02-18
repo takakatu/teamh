@@ -66,7 +66,7 @@
               %ul.brandsPulldown.displayNone
           %ul.listsRight
             - if user_signed_in? && current_user.id
-                = link_to "マイページ", users_path
+              = link_to "マイページ", users_path
             - else
               %li.listsRight__item.listsRight__item--login
                 = link_to "新規登録",  new_user_registration_path 
