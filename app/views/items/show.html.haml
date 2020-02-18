@@ -59,7 +59,9 @@
                   %th 発送日の目安
                   %td 
                     = @item.shopping_date.name
-          .optionalArea
+          .setumei
+            = @item.description          
+          .optionalArea         
             %ul
               %li#likeBtn.optionalBtn.likeBtn
                 %i.fa.fa-star
